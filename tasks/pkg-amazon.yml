@@ -1,0 +1,16 @@
+---
+- name: Amazon | Download SPM Client repo
+  get_url:
+    url: https://pub-repo.sematext.com/centos/sematext-centos-repo.noarch.rpm
+    dest: /tmp/sematext.rpm
+
+- name: Amazon | Install repo
+  yum:
+    name: /tmp/sematext.rpm
+    state: present
+
+- name: Amazon | Install SPM Monitor
+  yum:
+    name: spm-client
+    state: latest
+    update_cache: yes

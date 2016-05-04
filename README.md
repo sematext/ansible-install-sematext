@@ -10,8 +10,8 @@ None
 Example Playbooks
 -------------------------
 ```
-- hosts: servers
-  sudo: yes
+- hosts: all
+  become: yes
   roles:
     - { role: sematext.spm-monitor-install}
 ```

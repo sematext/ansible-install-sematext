@@ -1,7 +1,7 @@
-Ansible Sematext SPM Monitor Install Role
+Ansible Sematext Agent Install Role
 =========================================
 
-Install Sematext SPM Monitor.
+Install Sematext Agent.
 
 Dependencies
 ------------
@@ -13,7 +13,7 @@ Example Playbooks
 - hosts: all
   become: yes
   roles:
-    - { role: sematext.spm-monitor-install}
+    - { role: sematext.spm-monitor-install }
 ```
 
 License

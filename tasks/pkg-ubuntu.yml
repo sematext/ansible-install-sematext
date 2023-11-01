@@ -1,17 +1,24 @@
 ---
-- name: Ubuntu | Add SPM Client repo key
+- name: Ubuntu | Install default-jre and ca-ceritificates
+  apt:
+    pkg: 
+    - default-jre
+    - ca-ceritificates
+    state: latest
+    update-cache: yes
+
+- name: Ubuntu | Add Sematext Agent repo key
   apt_key:
     url: https://pub-repo.sematext.com/ubuntu/sematext.gpg.key
     state: present
 
-- name: Ubuntu | Add SPM Client repo
+- name: Ubuntu | Add Sematext Agent repo
   apt_repository:
     repo: "deb http://pub-repo.sematext.com/ubuntu sematext main"
     state: present
 
-- name: Ubuntu | Install SPM Client
+- name: Ubuntu | Install Sematext Agent
   apt:
-    pkg: spm-client
+    pkg: sematext-agent
     state: latest
     update-cache: yes
-

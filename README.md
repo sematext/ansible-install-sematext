@@ -21,7 +21,7 @@ License
 
 Apache2
 
-Author Information
+Need help?
 ------------------
 
-Ciprian Hacman <ciprian.hacman@sematext.com>
+support@sematext.com

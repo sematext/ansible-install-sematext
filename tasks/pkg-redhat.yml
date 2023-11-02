@@ -1,11 +1,19 @@
 ---
-- name: RedHat | Download SPM Client repo
+- name: RedHat | Install ca-ceritificates and java-latest-openjdk-headless
+  yum:
+    name:
+      - ca-ceritificates
+      - java-latest-openjdk-headless
+    state: latest
+    update_cache: yes
+
+- name: RedHat | Download Sematext Agent repo
   get_url:
     url: https://pub-repo.sematext.com/redhat/sematext.repo
     dest: /etc/yum.repos.d/sematext.repo
 
-- name: RedHat | Install SPM Monitor
+- name: RedHat | Install Sematext Agent
   yum:
-    name: spm-client
+    name: sematext-agent
     state: latest
     update_cache: yes

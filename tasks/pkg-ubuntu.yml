@@ -1,11 +1,20 @@
 ---
-- name: Ubuntu | Install default-jre and ca-ceritificates
+- name: Ubuntu | Check installed packages
+  package_facts:
+    manager: "auto"
+
+- name: Ubuntu | Install ca-ceritificates
   apt:
-    pkg: 
-    - default-jre
-    - ca-ceritificates
+    pkg: ca-ceritificates
     state: latest
-    update-cache: yes
+    update_cache: yes
+
+- name: Ubuntu | Install default-jre
+  apt:
+    pkg: default-jre
+    state: latest
+    update_cache: yes
+  when: "'default-jre' not in ansible_facts.packages"
 
 - name: Ubuntu | Add Sematext Agent repo key
   apt_key:

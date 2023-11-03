@@ -1,11 +1,20 @@
 ---
-- name: CentOS | Install ca-ceritificates and java-latest-openjdk-headless
+- name: "CentOS | Check installed packages"
+  package_facts:
+    manager: "auto"
+
+- name: CentOS | Install ca-ceritificates
   yum:
-    name:
-      - ca-ceritificates
-      - java-latest-openjdk-headless
+    name: ca-ceritificates
     state: latest
     update_cache: yes
+
+- name: CentOS | Install java-openjdk-headless
+  yum:
+    name: java-openjdk-headless
+    state: latest
+    update_cache: yes
+  when: "'java-openjdk-headless' not in ansible_facts.packages"
 
 - name: CentOS | Download Sematext Agent repo
   get_url:

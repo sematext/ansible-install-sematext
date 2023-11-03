@@ -3,9 +3,9 @@
   package_facts:
     manager: "auto"
 
-- name: Ubuntu | Install ca-ceritificates
+- name: Ubuntu | Install ca-certificates
   apt:
-    pkg: ca-ceritificates
+    pkg: ca-certificates
     state: latest
     update_cache: yes
 

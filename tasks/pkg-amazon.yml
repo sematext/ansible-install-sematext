@@ -3,9 +3,9 @@
   package_facts:
     manager: "auto"
 
-- name: Amazon | Install ca-ceritificates
+- name: Amazon | Install ca-certificates
   yum:
-    name: ca-ceritificates
+    name: ca-certificates
     state: latest
     update_cache: yes
 

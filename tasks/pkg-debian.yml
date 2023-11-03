@@ -3,9 +3,9 @@
   package_facts:
     manager: "auto"
 
-- name: Debian | Install ca-ceritificates
+- name: Debian | Install ca-certificates
   apt:
-    pkg: ca-ceritificates
+    pkg: ca-certificates
     state: latest
     update_cache: yes
 

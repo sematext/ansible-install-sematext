@@ -3,9 +3,9 @@
   package_facts:
     manager: "auto"
 
-- name: Fedora | Install ca-ceritificates
+- name: Fedora | Install ca-certificates
   dnf:
-    name: ca-ceritificates
+    name: ca-certificates
     state: latest
     update_cache: yes
 

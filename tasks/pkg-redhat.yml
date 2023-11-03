@@ -3,9 +3,9 @@
   package_facts:
     manager: "auto"
 
-- name: RedHat | Install ca-ceritificates
+- name: RedHat | Install ca-certificates
   yum:
-    name: ca-ceritificates
+    name: ca-certificates
     state: latest
     update_cache: yes
 

@@ -1,11 +1,28 @@
 ---
-- name: CentOS | Download SPM Client repo
+- name: "CentOS | Check installed packages"
+  package_facts:
+    manager: "auto"
+
+- name: CentOS | Install ca-certificates
+  yum:
+    name: ca-certificates
+    state: latest
+    update_cache: yes
+
+- name: CentOS | Install java-openjdk-headless
+  yum:
+    name: java-openjdk-headless
+    state: latest
+    update_cache: yes
+  when: "'java-openjdk-headless' not in ansible_facts.packages"
+
+- name: CentOS | Download Sematext Agent repo
   get_url:
     url: https://pub-repo.sematext.com/centos/sematext.repo
     dest: /etc/yum.repos.d/sematext.repo
 
-- name: CentOS | Install SPM Monitor
+- name: CentOS | Install Sematext Agent
   yum:
-    name: spm-client
+    name: sematext-agent
     state: latest
     update_cache: yes

@@ -1,0 +1,28 @@
+---
+- name: Fedora | Check installed packages
+  package_facts:
+    manager: "auto"
+
+- name: Fedora | Install ca-certificates
+  dnf:
+    name: ca-certificates
+    state: latest
+    update_cache: yes
+
+- name: Fedora | Install java-openjdk-headless
+  dnf:
+    name: java-openjdk-headless
+    state: latest
+    update_cache: yes
+  when: "'java-openjdk-headless' not in ansible_facts.packages"
+
+- name: Fedora | Download Sematext Agent repo
+  get_url:
+    url: https://pub-repo.sematext.com/fedora/sematext.repo
+    dest: /etc/dnf.repos.d/sematext.repo
+
+- name: Fedora | Install Sematext Agent
+  dnf:
+    name: sematext-agent
+    state: latest
+    update_cache: yes

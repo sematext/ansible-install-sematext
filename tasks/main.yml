@@ -2,13 +2,13 @@
 - name: Check if OS is supported
   fail:
     msg: "Unsupported ansible_distribution: {{ ansible_distribution }}"
-  when: ansible_distribution not in ['Amazon', 'CentOS', 'RedHat', 'Debian', 'Ubuntu']
+  when: ansible_distribution not in ['Amazon', 'CentOS', 'RedHat', 'Debian', 'Ubuntu', 'Fedora']
 
 - name: Install package
   include: pkg-{{ ansible_distribution | lower }}.yml
 
-- name: Start SPM Monitor
+- name: Start Sematext Agent
   service:
-    name: spm-monitor
+    name: sematext-agent
     state: started
     enabled: yes

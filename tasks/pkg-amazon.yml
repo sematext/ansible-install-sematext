@@ -8,12 +8,16 @@
     name: ca-certificates
     state: latest
     update_cache: yes
+  vars:
+    ansible_python_interpreter: /usr/bin/python2
 
 - name: Amazon | Install java-openjdk-headless
   yum:
     name: java-openjdk-headless
     state: latest
     update_cache: yes
+  vars:
+    ansible_python_interpreter: /usr/bin/python2
   when: "'java-openjdk-headless' not in ansible_facts.packages"
 
 - name: Amazon | Download Sematext Agent repo
@@ -26,3 +30,5 @@
     name: sematext-agent
     state: latest
     update_cache: yes
+  vars:
+    ansible_python_interpreter: /usr/bin/python2

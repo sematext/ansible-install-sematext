@@ -19,7 +19,7 @@
 - name: Fedora | Download Sematext Agent repo
   get_url:
     url: https://pub-repo.sematext.com/fedora/sematext.repo
-    dest: /etc/dnf.repos.d/sematext.repo
+    dest: /etc/yum.repos.d/sematext.repo
 
 - name: Fedora | Install Sematext Agent
   dnf:

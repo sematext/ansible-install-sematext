@@ -29,7 +29,10 @@ galaxy_info:
         - 9
     - name: Fedora
       versions:
-        - 17
+        - 38
+    - name: Amazon Linux
+      versions:
+        - 2
   categories:
     - monitoring
     - logging

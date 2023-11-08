@@ -9,12 +9,20 @@
     state: latest
     update_cache: yes
 
+- name: Debian | Install gnupg2
+  apt:
+    pkg: gnupg2
+    state: latest
+    update_cache: yes
+  when: "'gnupg2' not in ansible_facts.packages"
+
 - name: Debian | Install default-jre
   apt:
     pkg: default-jre
     state: latest
     update_cache: yes
   when: "'default-jre' not in ansible_facts.packages"
+  ignore_errors: yes
 
 - name: Debian | Add Sematext Agent repo key
   apt_key:

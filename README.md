@@ -5,7 +5,7 @@ Install Sematext Agent.
 
 Dependencies
 ------------
-Java must be installed and 'java' must be in the PATH.
+None
 
 Example Playbooks
 -------------------------

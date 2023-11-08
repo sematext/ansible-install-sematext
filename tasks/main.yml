@@ -5,7 +5,7 @@
   when: ansible_distribution not in ['Amazon', 'CentOS', 'RedHat', 'Debian', 'Ubuntu', 'Fedora']
 
 - name: Install package
-  include: pkg-{{ ansible_distribution | lower }}.yml
+  include_tasks: pkg-{{ ansible_distribution | lower }}.yml
 
 - name: Start Sematext Agent
   service:

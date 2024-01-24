@@ -23,16 +23,19 @@ galaxy_info:
         - bookworm
     - name: EL
       versions:
-        - 6
-        - 7
-        - 8
-        - 9
+        - "6"
+        - "7"
+        - "8"
+        - "9"
     - name: Fedora
       versions:
-        - 38
+        - "38"
     - name: Amazon Linux
       versions:
-        - 2
+        - "2"
+    - name: opensuse
+      versions:
+        - "15.0"
   categories:
     - monitoring
     - logging

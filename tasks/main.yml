@@ -12,3 +12,6 @@
     name: sematext-agent
     state: started
     enabled: yes
+
+- name: Configure Sematext Agent by setting your Infra App token
+  command: /opt/spm/bin/setup-infra {{ infra_token }}

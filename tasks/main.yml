@@ -13,5 +13,11 @@
     state: started
     enabled: yes
 
-- name: Configure Sematext Agent by setting your Infra App token
-  command: /opt/spm/bin/setup-infra --infra-token {{ infra_token }}
+- name: Configure Sematext Agent by setting your Infra App token and region
+  command: >
+    /opt/spm/bin/setup-infra
+    --infra-token {{ infra_token }}
+    {% if region is defined %}
+    --region {{ region }}
+    {% endif %}
+    
